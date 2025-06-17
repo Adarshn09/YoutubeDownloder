@@ -136,13 +136,14 @@ def download_video():
                     'preferredcodec': 'mp3',
                     'preferredquality': '192',
                 }],
-                 'cookies': 'cookies.txt',
+                'cookies': '/etc/secrets/cookies.txt',
+
             }
         else:
             ydl_opts = {
                 'format': format_id,
                 'outtmpl': os.path.join(temp_dir, '%(title)s.%(ext)s'),
-                 'cookies': 'cookies.txt', 
+                  'cookies': '/etc/secrets/cookies.txt',
             }
         
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
